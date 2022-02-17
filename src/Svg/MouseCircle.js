@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useCallback} from 'react'
 
 const MouseCircle = () => {
 
@@ -11,11 +11,10 @@ const MouseCircle = () => {
     const [move, setMove] = useState({X,Y});
     // console.log(move);
 
-    const handleMouseMove = (event) =>{
+    const handleMouseMove = useCallback((event) =>{
         const { clientX, clientY} = event;
         setMove({X:clientX,Y:clientY})
-    }
-
+    },[setMove]) 
   return (
     <div style={{border: "1px solid red"}}>
         <svg width={width} height={height} onMouseMove={handleMouseMove}>
