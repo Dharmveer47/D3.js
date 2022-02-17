@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        #chart {
+            width: 100%;
+            height: auto;
+        }
+    </style> -->
+  </head>
+  <body>
+    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+    <script>
+      const data = [
+        {
+          name: "January",
+          trafficValue: 0,
+        },
+        {
+          name: "February",
+          trafficValue: 10,
+        },
+        {
+          name: "March",
+          trafficValue: 5,
+        },
+        {
+          name: "April",
+          trafficValue: 8,
+        },
+        {
+          name: "May",
+          trafficValue: 15,
+        },
+        {
+          name: "June",
+          trafficValue: 20,
+        },
+        {
+          name: "July",
+          trafficValue: 18,
+        },
+        {
+          name: "August",
+          trafficValue: 25,
+        },
+        {
+          name: "September",
+          trafficValue: 30,
+        },
+        {
+          name: "October",
+          trafficValue: 35,
+        },
+        {
+          name: "November",
+          trafficValue: 40,
+        },
+        {
+          name: "December",
+          trafficValue: 45,
+        },
+      ];
+
+      // Calculate the total traffic value
+      let total = 0;
+      data.forEach((item) => {
+        total += item.trafficValue;
+      });
+      console.log(total);
+    </script>
+  </body>
+</html>
