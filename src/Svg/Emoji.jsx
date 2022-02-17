@@ -1,5 +1,7 @@
 import React from "react";
-import { arc } from "d3";
+import { Mouth } from "./Emoji/Mouth";
+import { BackgroundCircle } from "./Emoji/BgCircle";
+import { FaceContainer } from "./Emoji/FaceContainer";
 /**  r= {height/2 - strokeWidth/2} **/
 const Emoji = () => {
   const width = 400;
@@ -13,42 +15,21 @@ const Emoji = () => {
   const mouthRadious = 10;
   const mouthWidth = 120;
 
-   
-
-  const MouthArc = arc()
-    .innerRadius(mouthWidth)
-    .outerRadius(mouthRadious + mouthWidth)
-    .startAngle(Math.PI/2)
-    .endAngle(Math.PI * 3/2);
-
   return (
     <div>
-      <svg width={width} height={height}>
-        <g transform={`translate(${centerX},${centerY})`}>
-          <circle
-            r={centerY - strokeWidth / 2}
-            
-            fill="yellow"
-            stroke="black"
-            strokeWidth={strokeWidth}
-          />
-          <circle
-            r={eyeRadious}
-            cx={ - eyeOffsetX}
-            cy={ - eyeOffsetY}
-            fill="black"
-          />
-          <circle
-            r={eyeRadious}
-            cx={ eyeOffsetX}
-            cy={ - eyeOffsetY}
-            fill="black"
-          />
-          <path d={MouthArc()} />
-        </g>
-      </svg>
+      <FaceContainer centerX={centerX} centerY={centerY} width={width} height={height} >
+          <BackgroundCircle centerY={centerY} strokeWidth={strokeWidth} />
+          <Mouth
+            mouthWidth={mouthWidth}
+            mouthRadious={mouthRadious}
+            eyeRadious={eyeRadious}
+            eyeOffsetX={eyeOffsetX}
+            eyeOffsetY={eyeOffsetY}
+          /> 
+        </FaceContainer>
     </div>
   );
 };
+
 
 export default Emoji;

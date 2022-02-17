@@ -1,11 +1,11 @@
 import React from 'react'
 import Emoji from './Svg/Emoji'
-// import BarChar from './Components/BarChar'
+import MouseCircle from './Svg/MouseCircle'
 const App = () => {
   return (
     <div>
-      {/* <BarChar/> */}
-      <Emoji/>
+      <MouseCircle/>
+      {/* <Emoji/> */}
     </div>
   )
 }
