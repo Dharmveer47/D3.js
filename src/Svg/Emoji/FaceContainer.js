@@ -7,7 +7,9 @@ export const FaceContainer = ({
 }) => {
   return (
     <svg width={width} height={height}>
-      <g transform={`translate(${centerX},${centerY})`}>{children}</g>
+      <g transform={`translate(${centerX},${centerY})`}>
+        {children}
+      </g>
     </svg>
   );
 };

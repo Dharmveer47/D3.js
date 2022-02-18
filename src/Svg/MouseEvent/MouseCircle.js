@@ -15,7 +15,7 @@ const MouseCircle = () => {
         const { clientX, clientY} = event;
         setMove({X:clientX,Y:clientY})
     },[setMove]) 
-  return (
+  return (  
     <div style={{border: "1px solid red"}}>
         <svg width={width} height={height} onMouseMove={handleMouseMove}>
         <circle
