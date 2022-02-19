@@ -6,7 +6,7 @@ import { csv, max, scaleBand, scaleLinear } from "d3";
 const Cvs = () => {
   const width = 400;
   const height = 400;
-  const margin = { top: 20, right: 20, bottom: 20, left: 20 };
+  const margin = { top: 20, right: 0, bottom: 20, left: 100 };
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
   const [data, setData] = useState(null);
@@ -25,8 +25,6 @@ const Cvs = () => {
 
   if (!data) return <div>Loading...</div>;
 
-  
-
   console.log(data);
   const yScale = scaleBand()
     .domain(data.map((d) => d.Country))
@@ -39,11 +37,33 @@ const Cvs = () => {
   return (
     <div style={{ border: "1px solid red" }}>
       <svg width={width} height={height}>
-        <g transform={`translate(${margin.left},${margin.top})`} fill="" stroke="white" stroke-width="1">
-            
+        <g
+          transform={`translate(${margin.left},${margin.top})`}
+          stroke="white"
+          stroke-width="1"
+        >
+          {xScale.ticks().map((tickValue) => (
+            <g transform={`translate(${xScale(tickValue)},0)`}>
+              <line y2={innerHeight} stroke="skyblue" />
+              <text
+                y={innerHeight + 3}
+                dy=".71em"
+                style={{ textAnchor: "middle" }}
+              >
+                {tickValue / 1000}{" "}
+              </text>
+            </g>
+          ))}
+
+          {yScale.domain().map((tickValue) => (
+            <g transform={`translate(0,${yScale(tickValue)})`}>
+              <text style={{textAnchor: "end", fontFamily: "sans-serif" , fontStyle: "normal" , color: "black" , opacity: "10"}} >{tickValue}</text>
+            </g>
+          ))}
+
           {data.map((d) => (
-              <rect
-              x={0}
+            <rect
+            x={0}
               y={yScale(d.Country)}
               width={xScale(d.Population)}
               height={yScale.bandwidth()}

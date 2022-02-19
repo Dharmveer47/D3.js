@@ -3,8 +3,8 @@ import React,{useState, useCallback} from 'react'
 const MouseCircle = () => {
 
     
-        const width = 600;
-        const height = 500;
+        const width = "100%";
+        const height = "100vh";
         const X = width/2;
         const Y = height/2;
         const circleRadius = 30;
