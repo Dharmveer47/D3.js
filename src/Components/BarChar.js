@@ -8,45 +8,10 @@ import {
   YAxis,
   ZAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
-  CartesianGrid
 } from "recharts";
 
-const data02 = [
-  [
-  { hour: "12a", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "1a", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "2a", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "3a", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "4a", index: 1, traffic: 200 },
-  { hour: "5a", index: 1, traffic: 300 },
-  { hour: "6a", index: 1, traffic: 400 },
-  { hour: "7a", index: 1, traffic: 200 },
-  { hour: "8a", index: 1, traffic: 100 },
-  { hour: "9a", index: 1, traffic: 150 },
-  { hour: "10a", index: 1, traffic: 160 },
-  { hour: "11a", index: 1, traffic: 170 },
-  { hour: "12a", index: 1, traffic: 180 },
-  ]
-];
-console.log(data02.length)
-const data01 = [
-  { hour: "0100", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "0200", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "0300", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "0400", index: 1, traffic: Math.floor(Math.random() * 500) },
-  { hour: "0500", index: 1, traffic: 200 },
-  { hour: "0600", index: 1, traffic: 300 },
-  { hour: "0700", index: 1, traffic: 100 },
-  { hour: "0800", index: 1, traffic: 200 },
-  { hour: "0900", index: 1, traffic: 100 },
-  { hour: "1000", index: 1, traffic: 10 },
-  { hour: "1100", index: 1, traffic: 160 },
-  { hour: "1200", index: 1, traffic: 160 },
-  { hour: "1300", index: 1, traffic: 180 },
 
-];
 
 const parseDomain = (data) => [
     // console.log(data)
@@ -54,7 +19,7 @@ const parseDomain = (data) => [
   Math.max(
     Math.max.apply(
       null,
-      data01.map((entry) => entry.value)
+      data.map((entry) => entry.value)
     ),
     // Math.max.apply(
     //   null,
@@ -156,7 +121,6 @@ const MultiBar = ({month,op,data}) => {
           // height={0}
           // width={80}
           tick={false}
-          tickLine={true}
           axisLine={false}
           label={{ value: `${month}`, position: "center" }}
         />
