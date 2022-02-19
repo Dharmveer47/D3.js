@@ -50,8 +50,8 @@ const BarChar = () => {
 };
 
 const MultiBar = ({month,op,data}) => {
-  console.log(data);
-  const domain = parseDomain();
+
+  const domain = parseDomain(data);
   const range = [1, window.innerWidth * 2];
 
   const renderTooltip = (props) => {
