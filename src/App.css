@@ -19,6 +19,7 @@ body{
   min-height:1px ;
   background-color: rgb(0, 0, 0);
 }
+<<<<<<< HEAD
 .recharts-text{
   font-size: 12px;
 }
@@ -26,6 +27,12 @@ body{
   min-width: 800px;
   padding: 30px 0px;
   /* background: radial-gradient(53.15% 53.97% at 47.84% 51.62%, #615F62 0%, #363636 100%); */
+=======
+
+.bg{
+  min-width: 800px;
+  background: radial-gradient(53.15% 53.97% at 47.84% 51.62%, #615F62 0%, #363636 100%);
+>>>>>>> 29f74845672b7ee2b4116c30c73657e284d738fc
   /* Button shadows */
   
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.46), -4px -4px 8px rgba(116, 118, 119, 0.2);
@@ -49,8 +56,11 @@ body{
 }
 .mark{
   fill: #137889;
+<<<<<<< HEAD
 }
 .axis-label{
   font-size: 2em;
   fill: #137889;
+=======
+>>>>>>> 29f74845672b7ee2b4116c30c73657e284d738fc
 }
