@@ -1,17 +1,27 @@
 import React from 'react'
-import BarChart from './Components/BarChar'
+import BubbleGraph from './Components/BubbleGraph'
+// import BarChart from './Components/BarChar'
+// import ScatterTest from './Components/ScatterTest'
 // import BarChart02 from './Svg/Bar_chart/BarChart'
-import Cvs from './Svg/CvsFetch/Cvs'
-import Emoji from './Svg/Emoji'
-import MouseCircle from './Svg/MouseEvent/MouseCircle'
+// import Scatter from './Svg/Scaterplot/BarChart';
+// import Cvs from './Svg/CvsFetch/Cvs'
+// import Emoji from './Svg/Emoji'
+// import Line_Chart from './Svg/LineChart'
+// import MouseCircle from './Svg/MouseEvent/MouseCircle'
+import Bubble2 from './chartjsLib/Bubble'
 const App = () => {
   return (
     <div>
-      <BarChart/>
-      {/* <BarChart02/> */}
+      <BubbleGraph/>
+      {/* <Bubble2/> */}
+      {/* <ScatterTest/> */}
+      {/* <BarChart/> */}
+       {/* <BarChart02/> */}
+       {/* <Scatter/> */}
+      {/*
       <Cvs/>
       <MouseCircle/>
-      <Emoji/>
+      <Emoji/> */}
     </div>
   )
 }

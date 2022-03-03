@@ -3,7 +3,7 @@ import { useData } from "./useData";
 import { AxisBottom } from "./AxisBottom";
 import { AxisLeft } from "./AxisLeft";
 import { Marks } from "./Marks";
-import { max, scaleBand, scaleLinear, format } from "d3";
+import { max, scaleBand, scaleLinear, format,extent } from "d3";
 import "../../App.css";
 
 const Cvs = () => {
@@ -18,18 +18,18 @@ const Cvs = () => {
   //   console.log(data);
 
   if (!data) return <div>Loading...</div>;
+  const yValue = (d) => d.sepal_length;
+  const xValue = (d) => d.sepal_width;
 
-  const yValue = (d) => d.Country;
-  const xValue = (d) => d.Population;
   const yScale = scaleBand()
-    .domain(data.map(yValue))
-    .range([0, innerHeight])
-    .padding(0.1);
-
+  .domain(extent(data,yValue))
+  .range([0, innerHeight])
+  
   const xScale = scaleLinear()
-    .domain([0, max(data, xValue)])
-    .range([0, innerWidth]);
-
+  .domain(extent(data,xValue))
+  .range([0, innerWidth]);
+  
+//  console.log();
   return (
     <div style={{ border: "1px solid red" }}>
       <svg width={width} height={height}>

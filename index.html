@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSV</title>
+  </head>
+  <body>
+    <div><h1>Open Console and see the data </h1></div>
+    <script>
+
+      const url =
+        "https://gist.githubusercontent.com/Dharmveer47/031331ed2d8f62839b0bfcf0ba379e91/raw/Colors%2520Name";
+      const url2 =
+        "https://gist.githubusercontent.com/Dharmveer47/041fe5142c0774bee82cd10a829fa2c0/raw/195eb42e92d4cd4ddca387dc92c2b6782a97f21c/data.json";
+
+      // fetch(url2).then((res) => res.json().then((data) => {
+      //   console.log('%c Show only first array[1] ', 'background: "#5ba255"; color: #bada55; fontsize: "25px"' )
+      //   console.table(data[1])
+      //   console.log("\n Show whole data",data);
+      // }));
+      
+
+      let data = [];
+      let helper = [];
+      for (let i = 1; i <= 30; i++) {
+        for (let j = i; j < 10 ; j++) {
+          let Traffic = Math.floor(Math.random() * 600);
+          let Bcheck = j;
+          let Trcheck = j;
+          let Mocheck = j;
+          helper.push({
+            Hour: 24 * i,
+            Day: i,
+            index: 1,
+            Buses :  Bcheck =  Math.floor(Math.random() * (j+i+300)) ,
+            Trucks :  Trcheck = Math.floor(Math.random() * 500),
+            Motercar :  Mocheck= Math.floor(Math.random() * 400),
+            Traffic: Bcheck+Trcheck+Mocheck,
+          });
+        }
+        data.push(helper);
+      }
+
+      const MainData = JSON.stringify(data)
+      console.log(data);
+    </script>
+  </body>
+</html>
