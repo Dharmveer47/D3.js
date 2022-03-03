@@ -1,5 +1,5 @@
 import React from 'react'
-import BubbleGraph from './Components/BubbleGraph'
+// import BubbleGraph from './Components/BubbleGraph'
 // import BarChart from './Components/BarChar'
 // import ScatterTest from './Components/ScatterTest'
 // import BarChart02 from './Svg/Bar_chart/BarChart'
@@ -8,11 +8,12 @@ import BubbleGraph from './Components/BubbleGraph'
 // import Emoji from './Svg/Emoji'
 // import Line_Chart from './Svg/LineChart'
 // import MouseCircle from './Svg/MouseEvent/MouseCircle'
-import Bubble2 from './chartjsLib/Bubble'
+import OneMonth from './Components/OneMonth';
+// import Bubble2 from './chartjsLib/Bubble'
 const App = () => {
   return (
     <div>
-      <BubbleGraph/>
+      <OneMonth/>
       {/* <Bubble2/> */}
       {/* <ScatterTest/> */}
       {/* <BarChart/> */}

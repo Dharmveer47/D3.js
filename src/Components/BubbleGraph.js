@@ -46,7 +46,7 @@ const BubbleGraph = () => {
       <SingleData name="Aug" data={data[0]} show={false}/>
       <SingleData name="Sep" data={data[0]} show={false}/>
       <SingleData name="Oct" data={data[0]} show={false}/> */}
-      <SingleData name="Nov" data={data[0]} show={false}/>
+      {/* <SingleData name="Nov" data={data[0]} show={false}/> */}
       <SingleData name="Dec" data={data[0]} show={true} size={15}/>
     </div>
   );
@@ -90,7 +90,7 @@ const SingleData = ({ data,name,show,size }) => {
   const domain = parseDomain(data);
   const range = [20, 900];
   return (
-    <ResponsiveContainer width="100%" height={50}>
+    <ResponsiveContainer width="100%" height={500}>
       <ScatterChart
         width={800}
         height={40}
@@ -112,16 +112,16 @@ const SingleData = ({ data,name,show,size }) => {
           axisLine={show}
           // tickLine={{ transform: "translate(0, -6)" }}
           padding={{ left: 20, right: 20 }}
-          domain={["day[0]", 24]}
+          // domain={["day[0]", 24]}
         />
         <YAxis
           type="number"
-          dataKey="index"
+          dataKey="Traffic"
           height={10}
           width={80}
-          tick={false}
-          tickLine={false}
-          axisLine={false}
+          // tick={false}
+          // tickLine={false}
+          // axisLine={false}
           padding={{ top: 5 }}
           margin={{ top: 5 }}
           label={{ value: name, position: "insideRight" }}
